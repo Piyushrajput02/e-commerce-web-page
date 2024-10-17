@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+</head>
+
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Source+Serif+Pro:wght@300;400;600;700&family=Ubuntu:ital,wght@0,400;0,500;1,700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5;
+    line-height: 1.7rem;
+}
+
+
+body{
+font-family: 'Source Serif Pro', serif;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 1.8rem;
+}
+
+.logo h1{
+    color: #000;
+    font-size: 2.2rem;
+}
+
+.logo span{
+    color: #ff523b;
+    font-size: 2.2rem;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul{
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li a:hover{
+    color: #ff523b;
+    transition: 0.3s ease-in-out;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #555;
+}
+
+p{
+    font-size: 1.6rem;
+    color: #000;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-1{
+    flex-basis: 48%;
+    min-width: 300px;
+}
+
+.col-2{
+    flex-basis: 48%;
+    min-width: 300px;
+}
+
+.col-2 img{
+    max-width: 100%;
+    /* padding: 5rem 0; */
+}
+
+.col-1 h1{
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+.btn{
+    display: inline-block;
+    background-color: #ff523b;
+    color: #fff;
+    margin-top: 1rem;
+    width: 200px;
+    height: 38px;
+    text-align: center;
+    padding: 0.3rem;
+    border-radius: 25px;
+    margin: 1.2rem auto;
+    font-size: 1.5rem;
+    transition: 0.5s ease-in-out;
+}
+
+.btn:hover{
+    background: transparent;
+    color: #ff523b;
+    border: 1.5px solid #ff523b;
+    font-weight: 400;
+}
+
+.header{
+    background: radial-gradient(#fff,#ffd6d6);
+}
+
+.header .row{
+    margin-top: 25px;
+}
+
+.categories{
+    margin: 50px 0;
+    display: flex;
+}
+
+.col{
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.col img{
+    width: 100%;
+    border-radius: 15px;
+    border: 3px solid #ff523b;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.categories h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #222;
+}
+
+.categories p{
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 300;
+    padding: 1.5rem 0;
+}
+
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.col h3{
+    color: #444;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.col h3 span{
+    color: #ff523b;
+}
+
+.col-4{
+    flex-basis: 23%;
+    /* padding: 1rem; */
+    min-width: 200px;
+    margin-bottom: 1.5rem;
+    transition: 0.4s ease;
+}
+
+.col-4 img{
+    width: 100%;
+    border: 3px solid #ff523b;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.title{
+    text-align: center;
+    margin: 45px auto;
+    color: #222;
+    font-size: 2rem;
+    border-bottom: 3px solid #ff523b;
+    width: 450px;
+    margin-bottom: 70px;
+}
+
+.small-container p{
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 3.5rem;
+}
+
+.col-4 h4{
+    text-align: left;
+    color: #000;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+ .col-4 .rating{
+    color: #ff523b;
+    text-align: left;
+}
+
+.col-4 p{
+    color: #000;
+    text-align: left;
+    font-size: 1.3rem;
+}
+
+.col-4:hover{
+    transform: translateY(-5px);
+}
+
+
+.offer{
+    background: radial-gradient(#fff,#ffd6d6);
+    margin-top: 60px;
+    padding: 20px 0;
+}
+
+.offer-img{
+    padding: 50px;
+    width: 400px;
+}
+
+small{
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.col-2 p{
+    text-align: left;
+    font-size: 1.5rem;
+    padding:0;
+    color: #555;
+}
+
+.col-2 h1{
+    color: #222;
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+}
+
+
+/* ------------------testimonials -------------------- */
+.testimonial{
+    padding-top: 10rem;
+}
+
+.col-3{
+    flex-basis: 30%;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+}
+
+.col-3:hover{
+    transform: translateY(-10px);
+}
+
+.col-3 img{
+    width: 50px;
+    margin-top: 1.5rem;
+    border-radius: 50%;
+    border: 0.8px solid #ff523b;
+}
+.col-3 p{
+    font-size: 1.4rem;
+    text-align: left;
+    color: #555;
+}
+
+.col-3 h3{
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #222;
+}
+
+
+.col-3 .rating{
+    color: #ff523b;
+}
+
+.col-3 span{
+    color: #ff523b;
+}
+
+.col-3 .fa-quote-left{
+    color: #ff523b;
+    font-size: 1.8rem;
+}
+
+
+/* ------------ brands ---------------- */
+
+.brands{
+    margin: 100px auto;
+}
+
+.col-5{
+    width: 120px;
+    flex-basis: 19%;
+}
+
+.col-5 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+.col-5 img:hover{
+    filter: grayscale(0);
+}
+
+.footer{
+    background-color: #000;
+    color: #8a8a8a;
+    font-size: 1.4rem;
+    padding: 60px 0 20px;
+}
+
+.footer p{
+    color: #8a8a8a;
+}
+
+.footer h3{
+    color: #fff;
+    margin-bottom: 2.0rem;
+}
+
+.col-6{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-col-1{
+    flex-basis: 30%;
+}
+
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+
+.footer-col-1 img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.footer-col-3 ,.footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+
+.app-store{
+    margin-top: 20px;
+}
+
+.app-logo img{
+    width: 140px;
+}
+
+
+.copyright{
+    text-align: center;
+    padding-top: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer hr{
+    background: none;
+    height: 1px;
+    color: #8a8a8a;
+}
+
+.f-logo h1{
+    color: #fff;
+    font-size: 2.2rem;
+    padding-bottom: 1rem;
+}
+
+.f-logo span{
+    color: #ff523b;
+    font-size: 2.2rem;
+    padding-bottom: 1rem;
+
+}
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>E-commerce</title>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a><h1>Piyush <span>store</span></h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Account</a></li>
+                </ul>
+            </nav>
+            <img src="picture/cart.png" width="30px" height="30px">
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <h1>Give Your Workout<br><br>A New Style!</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Sapiente in esse animi quos, dicta ad!</p>
+                <a href="" class="btn">Explore now &#8594</a>
+            </div>
+            <div class="col-2">
+                <img src="picture/image1.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------- featured categories ------------ -->
+    <div class="categories">
+        <div class="small-container">
+            <h1>Categories</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br> Dicta quam accusamus in sint reprehenderit sunt.</p>
+            <div class="row">
+                <div class="col ">
+                    <img src="picture/category-1.jpg" >
+                    <h3>JEA<span>NS...</span></h3>
+                </div>
+                <div class="col ">
+                    <img src="picture/category-2.jpg" >
+                    <h3>SHO<span>ES...</span></h3>
+                </div>
+                <div class="col ">
+                    <img src="picture/category-3.jpg" >
+                    <h3>HOD<span>DY...</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- -------------- featured products ----------- -->
+
+    <div class="small-container">
+        <h2 class="title">FEATURED PRODUCTS</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto <br>corrupti dolores distinctio delectus cupiditate blanditiis.</p>
+        <div class="row">
+            <div class="col-4">
+                <img src="picture/product-1.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+                <p>$150.00</p>
+            </div>
+            <div class="col-4">
+                <img src="picture/product-2.jpg">
+                <h4>Black Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$100.00</p>
+            </div>
+            <div class="col-4">
+                <img src="picture/product-3.jpg">
+                <h4>Touser</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+                <p>$130.00</p>
+            </div>
+            <div class="col-4">
+                <img src="picture/product-4.jpg">
+                <h4>Blue T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>$180.00</p>
+            </div>
+        </div>
+        <h2 class="title">LATEST PRODUCTS</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="picture/product-5.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+                <p>$150.00</p>
+            </div>
+            <div class="col-4">
+                <img src="picture/product-6.jpg">
+                <h4>Black Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$100.00</p>
+            </div>
+            <div class="col-4">
+                <img src="picture/product-7.jpg">
+                <h4>Touser</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+                <p>$130.00</p>
+            </div>
+            <div class="col-4">
+                <img src="picture/product-8.jpg">
+                <h4>Blue T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>$180.00</p>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="picture/product-9.jpg">
+                    <h4>Red Printed T-Shirt</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half"></i>
+                    </div>
+                    <p>$150.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="picture/product-10.jpg">
+                    <h4>Black Shoes</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$100.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="picture/product-11.jpg">
+                    <h4>Touser</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half"></i>
+                    </div>
+                    <p>$130.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="picture/product-12.jpg">
+                    <h4>Blue T-Shirt</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$180.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------- offer --------------- -->
+
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="picture/exclusive.png" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <h1>Smart Band 4</h1>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aperiam doloremque officiis quos et. Magnam ea deserunt amet in hic.<br></small>
+                    <a href="" class="btn">Buy Now &#8594</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------- testimonials -------------- -->
+
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto distinctio suscipit reprehenderit nisi, enim architecto beatae error voluptatem sunt voluptas!</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <img src="picture/user-1.png" alt="">
+                    <h3>Khemlata <span>Rani</span></h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto distinctio suscipit reprehenderit nisi, enim architecto beatae error voluptatem sunt voluptas!</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <img src="picture/user-2.png" alt="">
+                    <h3> Pankaj     <span>Rajpoot</span></h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto distinctio suscipit reprehenderit nisi, enim architecto beatae error voluptatem sunt voluptas!</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <img src="picture/user-3.png" alt="">
+                    <h3>Chulbuli <span>Kumari</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------- brands --------------------  -->
+
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="picture/logo-godrej.png" >
+                </div>
+                <div class="col-5">
+                    <img src="picture/logo-coca-cola.png" >
+                </div>
+                <div class="col-5">
+                    <img src="picture/logo-oppo.png" >
+                </div>
+                <div class="col-5">
+                    <img src="picture/logo-paypal.png" >
+                </div>
+                <div class="col-5">
+                    <img src="picture/logo-philips.png" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------- footer -------------------- -->
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios Mobile Phone.</p>
+                    <div class="app-logo">
+                        <img src="picture/play-store.png" alt="">
+                        <img src="picture/app-store.png" alt="">
+                    </div>
+                </div>
+                <div class="col-6 footer-col-2">
+                    <a class="f-logo">
+                        <h1>Piyush <span>store</span></h1>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, reiciendis.</p>
+                </div>
+                <div class="col-6 footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li> Coupons</li>
+                        <li> Blog Post</li>
+                        <li> Return Policy</li>
+                        <li> Join Affiliates</li>
+                    </ul>
+                </div>
+                <div class="col-6 footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">copyright-reserved  @piyush rajput</p>
+        </div>
+    </div>
+</body>
+</html>
